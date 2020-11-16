@@ -49,52 +49,6 @@ const managerQuestions = [
 
 let i = 1;
 
-const engineerQuestions = [
-    {
-        name: "engineerName",
-        type: "input",
-        message: `What is engineer #${i}'s name?`
-    },
-    {
-        name: "engineerId",
-        type: "input",
-        message: `What is engineer #${i}'s ID?`
-    },
-    {
-        name: "engineerEmail",
-        type: "input",
-        message: `What is engineer #${i}'s email address?`
-    },
-    {
-        name: "engineerGithub",
-        type: "input",
-        message: `What is engineer #${i}'s Github username?`
-    }
-];
-
-const internQuestions = [
-    {
-        name: "internName",
-        type: "input",
-        message: `What is intern #${i}'s name?`
-    },
-    {
-        name: "internId",
-        type: "input",
-        message: `What is intern #${i}'s ID?`
-    },
-    {
-        name: "internEmail",
-        type: "input",
-        message: `What is intern #${i}'s email address?`
-    },
-    {
-        name: "internSchool",
-        type: "input",
-        message: `What is intern #${i}'s School?`
-    }
-]
-
 let managerObject;
 let engineersInfo = [];
 let internsInfo = [];
