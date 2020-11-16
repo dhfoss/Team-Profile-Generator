@@ -49,18 +49,16 @@ const managerQuestions = [
 
 let i = 1;
 
-let managerObject;
-let engineersInfo = [];
-let internsInfo = [];
+const employeeArray = [];
 let engineerNumbers;
 let internNumbers;
 
 function managerPrompt() {
     inquirer.prompt(managerQuestions)
         .then(answers => {
-            managerObject = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-            engineerNumbers = answers.numberOfEngineers;
-            internNumbers = answers.numberOfInterns;
+            employeeArray.push(new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber));
+            engineerNumbers = Number(answers.numberOfEngineers);
+            internNumbers = Number(answers.numberOfInterns);
             engineerPrompt(answers.numberOfEngineers);
         })
         .catch(err => {
@@ -71,7 +69,7 @@ function managerPrompt() {
 managerPrompt();
 
 function engineerPrompt(engineers) {
-    if (i <= Number(engineers)) {
+    if (i <= engineers) {
         inquirer.prompt([
             {
                 name: "engineerName",
@@ -95,7 +93,7 @@ function engineerPrompt(engineers) {
             }
         ])
         .then(answers => {
-            engineersInfo.push(new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub));
+            employeeArray.push(new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub));
             i++;
             engineerPrompt(engineers);
         })
@@ -106,7 +104,7 @@ function engineerPrompt(engineers) {
 }
 
 function internPrompt(interns) {
-    if (i <= Number(interns)) {
+    if (i <= interns) {
         inquirer.prompt([
             {
                 name: "internName",
@@ -130,14 +128,15 @@ function internPrompt(interns) {
             }
         ])
         .then(answers => {
-            internsInfo.push(new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool));
+            employeeArray.push(new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool));
             i++;
             internPrompt(interns);
         })
     } else {
-        console.log(managerObject);
-        console.log(engineersInfo);
-        console.log(internsInfo);
+        fs.writeFile(outputPath, render(employeeArray), (err) => {
+            if (err) throw err;
+            console.log('Successfully wrote file!')
+        })
     }
 }
 
@@ -145,6 +144,7 @@ function internPrompt(interns) {
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
