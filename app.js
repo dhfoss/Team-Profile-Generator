@@ -14,6 +14,11 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+let i = 1;
+const employeeArray = [];
+let engineerNumbers;
+let internNumbers;
+
 const managerQuestions = [
     {
         name: "managerName",
@@ -47,12 +52,6 @@ const managerQuestions = [
     }
 ];
 
-let i = 1;
-
-const employeeArray = [];
-let engineerNumbers;
-let internNumbers;
-
 function managerPrompt() {
     inquirer.prompt(managerQuestions)
         .then(answers => {
@@ -65,8 +64,6 @@ function managerPrompt() {
             if (err) throw err;
         });
 }
-
-managerPrompt();
 
 function engineerPrompt(engineers) {
     if (i <= engineers) {
@@ -140,6 +137,7 @@ function internPrompt(interns) {
     }
 }
 
+managerPrompt();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
