@@ -33,7 +33,17 @@ const managerQuestions = [
     {
         name: "managerEmail",
         type: "input",
-        message: "What is the Manager's email?"
+        message: "What is the Manager's email?",
+        default: () => {},
+          validate: function (email) {
+              valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+              if (valid) {
+                  return true;
+              } else {
+                  console.log(".  Please enter a valid email")
+                  return false;
+              }
+          }
     },
     {
         name: "managerOfficeNumber",
@@ -43,12 +53,20 @@ const managerQuestions = [
     {
         name: "numberOfEngineers",
         type: "input",
-        message: "How many Engineers are on the team?"
+        message: "How many Engineers are on the team?",
+        validate: value => {
+            let valid = !isNaN(parseFloat(value));
+            return valid || 'Please enter a number';
+          }
     },
     {
         name: "numberOfInterns",
         type: "input",
-        message: "How many Interns are on the team?"
+        message: "How many Interns are on the team?",
+        validate: value => {
+            var valid = !isNaN(parseFloat(value));
+            return valid || 'Please enter a number';
+          }
     }
 ];
 
@@ -81,7 +99,17 @@ function engineerPrompt(engineers) {
             {
                 name: "engineerEmail",
                 type: "input",
-                message: `What is engineer #${i}'s email address?`
+                message: `What is engineer #${i}'s email address?`,
+                default: () => {},
+                validate: email => {
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log(".  Please enter a valid email")
+                        return false;
+                    }
+                }
             },
             {
                 name: "engineerGithub",
@@ -116,7 +144,17 @@ function internPrompt(interns) {
             {
                 name: "internEmail",
                 type: "input",
-                message: `What is intern #${i}'s email address?`
+                message: `What is intern #${i}'s email address?`,
+                default: () => {},
+                validate: email => {
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log(".  Please enter a valid email")
+                        return false;
+                    }
+                }
             },
             {
                 name: "internSchool",
@@ -132,7 +170,7 @@ function internPrompt(interns) {
     } else {
         fs.writeFile(outputPath, render(employeeArray), (err) => {
             if (err) throw err;
-            console.log('Successfully wrote file!')
+            console.log('Successfully wrote file in the ouput folder!')
         })
     }
 }
