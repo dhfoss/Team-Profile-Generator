@@ -4,7 +4,7 @@
 [Description](https://github.com/dhfoss/Team-Profile-Generator/#description)  
 [Installation](https://github.com/dhfoss/Team-Profile-Generator/#installation)  
 [Usage](https://github.com/dhfoss/Team-Profile-Generator/#usage)  
-[Video Demonstration](https://github.com/dhfoss/Team-Profile-Generator/#demonstration)  
+[Demonstration](https://github.com/dhfoss/Team-Profile-Generator/#demonstration)  
 [Tests](https://github.com/dhfoss/Team-Profile-Generator/#tests)  
 [Questions](https://github.com/dhfoss/Team-Profile-Generator/#questions)
 
