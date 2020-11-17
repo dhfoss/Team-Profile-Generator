@@ -10,3 +10,7 @@ body {
 .card {
     opacity: .6;
 }
+
+* {
+    font-family: 'Frank Ruhl Libre', serif;
+}
