@@ -4,7 +4,7 @@
 [Description](https://github.com/dhfoss/Team-Profile-Generator/#description)  
 [Installation](https://github.com/dhfoss/Team-Profile-Generator/#installation)  
 [Usage](https://github.com/dhfoss/Team-Profile-Generator/#usage)  
-[Video Demonstration](https://github.com/dhfoss/Team-Profile-Generator/#video_demonstration)  
+[Video Demonstration](https://github.com/dhfoss/Team-Profile-Generator/#demonstration)  
 [Tests](https://github.com/dhfoss/Team-Profile-Generator/#tests)  
 [Questions](https://github.com/dhfoss/Team-Profile-Generator/#questions)
 
@@ -24,7 +24,7 @@ A file called "team.html" will be created in the "output" folder. There is also 
 Here is a screenshot of the finished product:  
 ![Browser](/assets/screen-shots/3-browser.png?raw=true "Optional Title")  
 
-### Video Demonstration
+### Demonstration
 https://drive.google.com/file/d/1S4ZHd6RzkNsIIGUXODFYrD7S70dsHIO4/view
 
 ### Tests
