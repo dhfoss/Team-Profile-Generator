@@ -1,0 +1,12 @@
+body {
+    background-image: url("./images/notebook_natural_laptop_macbook.jpg");
+    background-size: cover;
+}
+
+.jumbotron {
+    opacity: 0.4;
+}
+
+.card {
+    opacity: .6;
+}
