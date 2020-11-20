@@ -28,7 +28,7 @@ Here is a screenshot of the finished product:
 https://drive.google.com/file/d/1S4ZHd6RzkNsIIGUXODFYrD7S70dsHIO4/view
 
 ### Tests
-https://github.com/dhfoss/Team-Profile-Generator/tree/main/test
+https://github.com/dhfoss/Team-Profile-Generator/tree/main/Develop/test
 
 ### Questions
 For questions contact me at:  
